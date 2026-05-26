@@ -51,9 +51,8 @@ function Home() {
               Supporting Your Journey to Mental Wellness
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              At Calm Horizon, I offer thoughtful evaluation, evidence-based
-              treatment, and steady follow-through — delivered virtually, from
-              the comfort of home.
+              Calm Horizon provides compassionate, evidence-based mental health
+              care tailored to each individual’s unique needs.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Link

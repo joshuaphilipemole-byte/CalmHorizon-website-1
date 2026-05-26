@@ -120,13 +120,13 @@ function Home() {
           </h2>
           <div className="mx-auto mt-10 h-px w-16 bg-accent/40" />
           <p className="mx-auto mt-10 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-            Every plan begins with a 60-minute virtual evaluation so I can understand
-            your history, your goals, and what's been getting in the way.
+            Each treatment plan begins with a comprehensive 60-minute virtual evaluation designed to gain a full understanding of your history, concerns, and goals for care.
           </p>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-            I blend medication management with practical therapy strategies — and
-            I stay involved as life evolves, offering the kind of attentive,
-            unhurried care that meaningful progress requires.
+            Treatment integrates medication management with practical, supportive therapeutic strategies. Ongoing care is collaborative and intentionally paced, allowing space for reflection, adjustment, and meaningful progress over time.
+          </p>
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
+            The focus is on delivering attentive, individualized psychiatric care that is both clinically sound and grounded in consistency, clarity, and trust.
           </p>
         </div>
       </section>

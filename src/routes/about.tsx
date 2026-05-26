@@ -28,6 +28,53 @@ const values = [
 function AboutPage() {
   return (
     <>
+      <section className="bg-soft-gradient">
+        <div className="mx-auto max-w-6xl px-6 py-24">
+          <div className="grid gap-12 lg:grid-cols-[minmax(0,420px)_minmax(0,1fr)] lg:items-center">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-widest text-accent">Meet the clinician</p>
+              <h2 className="mt-3 text-3xl font-bold md:text-4xl">Jane Nwankwo, NP</h2>
+              <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                A licensed psychiatric clinician committed to attentive,
+                evidence-based virtual care.
+              </p>
+
+              <div className="mt-10 space-y-6 text-base leading-relaxed text-muted-foreground">
+                <p>
+                  Jane Nwankwo is a board-certified Psychiatric Mental Health Nurse Practitioner dedicated to providing compassionate, personalized, and evidence-based mental health care.
+                </p>
+                <p>
+                  She believes mental health care should feel supportive, collaborative, and free of judgment. Jane is committed to creating a safe and welcoming space where patients feel heard, respected, and comfortable discussing their concerns.
+                </p>
+                <p>
+                  Her approach is thoughtful, patient-centered, and focused on helping individuals achieve emotional wellness, balance, and improved quality of life. She values building genuine therapeutic relationships and meeting patients where they are in their mental health journey.
+                </p>
+              </div>
+
+              <div className="mt-12">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-card"
+                >
+                  Book an Appointment
+                </Link>
+              </div>
+            </div>
+
+            <div className="max-w-[560px]">
+              <img
+                src={officeImg}
+                alt="Calm, light-filled virtual therapy setting with teal accents"
+                width={1600}
+                height={900}
+                loading="lazy"
+                className="aspect-[4/5] w-full rounded-3xl object-cover shadow-soft"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="mx-auto max-w-6xl px-6 pt-20 pb-12">
         <p className="text-sm font-semibold uppercase tracking-widest text-accent">About Calm Horizon</p>
         <h1 className="mt-3 max-w-3xl text-5xl font-extrabold leading-[1.05] md:text-6xl">
@@ -64,47 +111,6 @@ function AboutPage() {
               </li>
             ))}
           </ul>
-        </div>
-      </section>
-
-      <section className="bg-soft-gradient">
-        <div className="mx-auto max-w-6xl px-6 py-24">
-          <div className="max-w-2xl">
-            <h2 className="text-3xl font-bold md:text-4xl">Meet the clinician</h2>
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              A licensed psychiatric clinician committed to attentive,
-              evidence-based virtual care.
-            </p>
-          </div>
-
-          <img
-            src={officeImg}
-            alt="Calm, light-filled virtual therapy setting with teal accents"
-            width={1600}
-            height={900}
-            loading="lazy"
-            className="mt-12 aspect-[3/4] w-1/2 mx-auto rounded-3xl object-cover shadow-soft"
-          />
-
-          <div className="mt-12 grid gap-8 md:grid-cols-1">
-            <article className="mx-auto max-w-2xl border-t border-border pt-8 text-center">
-              <h3 className="text-2xl font-bold">Jane Nwankwo, NP</h3>
-              <p className="mt-1 text-sm font-semibold text-accent">Psychiatric Mental Health NP</p>
-              <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-                Anxiety, ADD/ADHD, Bipolar disorder, Depression, OCD, Sleep disorder,
-                Trauma, 1 Year Experience.
-              </p>
-            </article>
-          </div>
-
-          <div className="mt-12 text-center">
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-card"
-            >
-              Book an Appointment
-            </Link>
-          </div>
         </div>
       </section>
     </>

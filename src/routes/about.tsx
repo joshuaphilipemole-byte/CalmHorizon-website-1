@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CheckCircle2 } from "lucide-react";
-import officeImg from "@/assets/about-office.jpg";
+import officeImg from "@/assets/Jane Nwankwo NP.JPG";
 
 export const Route = createFileRoute("/about")({
   head: () => ({

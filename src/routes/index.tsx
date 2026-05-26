@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Brain, HeartPulse, Moon, ShieldCheck, Sparkles, Users } from "lucide-react";
-import heroImg from "@/assets/hero-horizon.jpg";
+import heroImg from "@/assets/about-office.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -33,7 +33,7 @@ function Home() {
         <div className="absolute inset-0">
           <img
             src={heroImg}
-            alt="Calm ocean horizon at dawn"
+            alt="Warm, welcoming office space for virtual psychiatric care"
             width={1920}
             height={1280}
             className="h-full w-full object-cover"

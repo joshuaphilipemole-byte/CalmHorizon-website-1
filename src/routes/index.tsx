@@ -116,7 +116,7 @@ function Home() {
         <div className="mx-auto max-w-4xl px-6 py-32 text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-accent">My approach</p>
           <h2 className="mt-4 text-4xl font-bold leading-[1.1] md:text-5xl">
-            Steady, evidence-based, and unhurried.
+            A steady, thoughtful, and evidence-based approach to care.
           </h2>
           <div className="mx-auto mt-10 h-px w-16 bg-accent/40" />
           <p className="mx-auto mt-10 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">

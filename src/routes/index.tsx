@@ -88,7 +88,7 @@ function Home() {
       <section className="mx-auto max-w-6xl px-6 py-24">
         <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
           <div className="max-w-xl">
-            <p className="text-sm font-semibold uppercase tracking-widest text-accent">What I treat</p>
+            <p className="text-sm font-semibold uppercase tracking-widest text-accent">Conditions treated</p>
             <h2 className="mt-3 text-4xl font-bold">Care designed around real life.</h2>
           </div>
           <Link to="/services" className="text-sm font-semibold text-accent hover:underline">

@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CheckCircle2 } from "lucide-react";
-import officeImg from "@/assets/about-office.jpg";
+import officeImg from "@/assets/Jane Nwankwo NP.JPG";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -81,7 +81,7 @@ function AboutPage() {
             width={1600}
             height={900}
             loading="lazy"
-            className="mt-12 aspect-[16/9] w-full rounded-3xl object-cover shadow-soft"
+            className="mt-12 aspect-[16/9] w-1/2 mx-auto rounded-3xl object-cover shadow-soft"
           />
 
           <div className="mt-12 grid gap-8 md:grid-cols-1">

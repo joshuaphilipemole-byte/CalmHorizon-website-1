@@ -2,16 +2,18 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Brain, HeartPulse, Moon, ShieldCheck, Sparkles, Users } from "lucide-react";
 import heroImg from "@/assets/about-office.jpg";
 
+const BASE_URL = "https://calmhorizon.health";
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Calm Horizon — Psychiatry & Mental Health Care" },
-      { name: "description", content: "Telehealth psychiatry for anxiety, depression, ADHD, and more. Same-week appointments with licensed clinicians." },
-      { property: "og:title", content: "Calm Horizon Psychiatry" },
-      { property: "og:description", content: "Modern, compassionate psychiatric care." },
-      { property: "og:url", content: "/" },
+      { title: "Calm Horizon — Telehealth Psychiatry for Anxiety, Depression & ADHD" },
+      { name: "description", content: "Virtual psychiatry for adults in CA, NY, and TX. Compassionate telehealth care for anxiety, depression, ADHD, mood, and medication management." },
+      { property: "og:title", content: "Calm Horizon Telehealth Psychiatry" },
+      { property: "og:description", content: "Virtual psychiatry for adults in CA, NY, and TX. Compassionate telehealth care for anxiety, depression, ADHD, mood, and medication management." },
+      { property: "og:url", content: `${BASE_URL}/` },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: `${BASE_URL}/` }],
   }),
   component: Home,
 });

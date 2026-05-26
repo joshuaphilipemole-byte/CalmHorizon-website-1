@@ -9,8 +9,35 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import socialImage from "@/assets/about-office.jpg";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+
+const BASE_URL = "https://calmhorizon.health";
+const JSON_LD_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  name: "Calm Horizon",
+  url: BASE_URL,
+  description:
+    "Calm Horizon offers evidence-based telehealth psychiatry for adults with anxiety, depression, ADHD, mood disorders, and medication management across California, New York, and Texas.",
+  image: socialImage,
+  email: "hello@calmhorizon.health",
+  telephone: "+1-415-555-0142",
+  areaServed: [
+    { "@type": "State", name: "California" },
+    { "@type": "State", name: "New York" },
+    { "@type": "State", name: "Texas" },
+  ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+1-415-555-0142",
+    contactType: "patient support",
+    email: "hello@calmhorizon.health",
+    areaServed: ["California", "New York", "Texas"],
+    availableLanguage: "English",
+  },
+};
 
 function NotFoundComponent() {
   return (
@@ -74,19 +101,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Calm Horizon — Compassionate Psychiatry & Mental Health Care" },
-      { name: "description", content: "Calm Horizon offers evidence-based psychiatric care and telehealth for anxiety, depression, ADHD, and more." },
-      { property: "og:title", content: "Calm Horizon — Compassionate Psychiatry & Mental Health Care" },
-      { property: "og:description", content: "Calm Horizon offers evidence-based psychiatric care and telehealth for anxiety, depression, ADHD, and more." },
+      { name: "robots", content: "index, follow" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Calm Horizon" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Calm Horizon — Compassionate Psychiatry & Mental Health Care" },
-      { name: "twitter:description", content: "Calm Horizon offers evidence-based psychiatric care and telehealth for anxiety, depression, ADHD, and more." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/0dBrNRLD0RcqjIA96eKKwbyKE2K3/social-images/social-1779039842814-Artboard_9-100.webp" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/0dBrNRLD0RcqjIA96eKKwbyKE2K3/social-images/social-1779039842814-Artboard_9-100.webp" },
+      { property: "og:image", content: socialImage },
+      { name: "twitter:image", content: socialImage },
     ],
     links: [
+      {
+        rel: "canonical",
+        href: `${BASE_URL}/`,
+      },
       {
         rel: "stylesheet",
         href: appCss,
@@ -104,6 +130,10 @@ function RootShell({ children }: { children: React.ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD_SCHEMA) }}
+        />
       </head>
       <body>
         {children}

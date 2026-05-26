@@ -6,16 +6,18 @@ import { z } from "zod";
 import { Calendar } from "@/components/ui/calendar";
 import { cn } from "@/lib/utils";
 
+const BASE_URL = "https://calmhorizon.health";
+
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact & Book — Calm Horizon Psychiatry" },
-      { name: "description", content: "Schedule a virtual appointment with Calm Horizon. Pick a date and time for your free 15-minute telehealth consultation across CA, NY, and TX." },
+      { title: "Contact & Book — Virtual Psychiatric Appointments" },
+      { name: "description", content: "Schedule a telehealth psychiatry appointment with Calm Horizon. Virtual visits are available for adults in California, New York, and Texas." },
       { property: "og:title", content: "Book a Virtual Appointment — Calm Horizon" },
-      { property: "og:description", content: "Choose a date and time that works for you." },
-      { property: "og:url", content: "/contact" },
+      { property: "og:description", content: "Schedule a telehealth psychiatry appointment with Calm Horizon. Virtual visits are available for adults in California, New York, and Texas." },
+      { property: "og:url", content: `${BASE_URL}/contact` },
     ],
-    links: [{ rel: "canonical", href: "/contact" }],
+    links: [{ rel: "canonical", href: `${BASE_URL}/contact` }],
   }),
   component: ContactPage,
 });

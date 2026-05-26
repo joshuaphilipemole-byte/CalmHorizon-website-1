@@ -2,16 +2,18 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { CheckCircle2 } from "lucide-react";
 import officeImg from "@/assets/Jane Nwankwo NP.JPG";
 
+const BASE_URL = "https://calmhorizon.health";
+
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Calm Horizon Psychiatry" },
-      { name: "description", content: "Meet Jane Nwankwo, a board-certified psychiatric mental health nurse practitioner delivering compassionate, evidence-based virtual mental health care." },
-      { property: "og:title", content: "About Calm Horizon" },
-      { property: "og:description", content: "Mission, values, and clinical approach." },
-      { property: "og:url", content: "/about" },
+      { title: "About Calm Horizon — Virtual Psychiatry Clinician" },
+      { name: "description", content: "Meet Jane Nwankwo, a psychiatric mental health nurse practitioner offering compassionate virtual psychiatry and medication support for adults in CA, NY, and TX." },
+      { property: "og:title", content: "About Calm Horizon Psychiatry" },
+      { property: "og:description", content: "Meet Jane Nwankwo, a psychiatric mental health nurse practitioner offering compassionate virtual psychiatry and medication support for adults in CA, NY, and TX." },
+      { property: "og:url", content: `${BASE_URL}/about` },
     ],
-    links: [{ rel: "canonical", href: "/about" }],
+    links: [{ rel: "canonical", href: `${BASE_URL}/about` }],
   }),
   component: AboutPage,
 });

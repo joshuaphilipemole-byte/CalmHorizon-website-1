@@ -1,16 +1,18 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Brain, HeartPulse, Sparkles, Sun, Users, ShieldCheck, Moon, Wind } from "lucide-react";
 
+const BASE_URL = "https://calmhorizon.health";
+
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — Calm Horizon Psychiatry" },
-      { name: "description", content: "Virtual telehealth psychiatry services including anxiety, depression, ADHD, mood disorders, and medication management." },
-      { property: "og:title", content: "Services at Calm Horizon" },
-      { property: "og:description", content: "What I treat and how care works." },
-      { property: "og:url", content: "/services" },
+      { title: "Services — Virtual Psychiatry & Medication Management" },
+      { name: "description", content: "Explore Calm Horizon telehealth psychiatry services for anxiety, depression, ADHD, bipolar, trauma, sleep disorders, and medication management." },
+      { property: "og:title", content: "Calm Horizon Services" },
+      { property: "og:description", content: "Explore Calm Horizon telehealth psychiatry services for anxiety, depression, ADHD, bipolar, trauma, sleep disorders, and medication management." },
+      { property: "og:url", content: `${BASE_URL}/services` },
     ],
-    links: [{ rel: "canonical", href: "/services" }],
+    links: [{ rel: "canonical", href: `${BASE_URL}/services` }],
   }),
   component: ServicesPage,
 });

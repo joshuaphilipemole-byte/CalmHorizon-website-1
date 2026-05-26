@@ -102,7 +102,7 @@ function AboutPage() {
               to="/contact"
               className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-card"
             >
-              Book a consult
+              Book an Appointment
             </Link>
           </div>
         </div>

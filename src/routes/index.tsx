@@ -59,7 +59,7 @@ function Home() {
                 to="/contact"
                 className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-soft transition-transform hover:-translate-y-0.5"
               >
-                Book a consultation <ArrowRight className="h-4 w-4" />
+                Book an Appointment <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 to="/services"

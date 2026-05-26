@@ -196,7 +196,7 @@ function ContactPage() {
               type="submit"
               className="w-full rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-card transition-transform hover:-translate-y-0.5"
             >
-              Book a consult
+              Book an Appointment
             </button>
             <p className="text-xs text-muted-foreground">
               By submitting, you agree to be contacted about your inquiry. I

@@ -54,7 +54,7 @@ export function SiteHeader() {
             to="/contact"
             className="hidden md:inline-flex items-center justify-center rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground shadow-card transition-transform hover:-translate-y-0.5"
           >
-            Book a consult
+            Book an Appointment
           </Link>
         </div>
       </div>
@@ -78,7 +78,7 @@ export function SiteHeader() {
             onClick={() => setMenuOpen(false)}
             className="mt-3 inline-flex w-full items-center justify-center rounded-full bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground shadow-card"
           >
-            Book a consult
+            Book an Appointment
           </Link>
         </div>
       )}

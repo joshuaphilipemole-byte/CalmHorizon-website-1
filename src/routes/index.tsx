@@ -48,7 +48,7 @@ function Home() {
               Telehealth psychiatry
             </span>
             <h1 className="mt-6 text-5xl font-extrabold leading-[1.05] tracking-tight md:text-6xl">
-              A clearer horizon for your mental health.
+              Supporting Your Journey to Mental Wellness
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
               At Calm Horizon, I offer thoughtful evaluation, evidence-based

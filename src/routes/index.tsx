@@ -96,7 +96,7 @@ function Home() {
           </Link>
         </div>
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map(({ icon: Icon, title, desc }) => (
+          {services.map(({ icon: Icon, title }) => (
             <article
               key={title}
               className="group rounded-2xl border border-border bg-card p-7 shadow-card transition-all hover:-translate-y-1 hover:shadow-soft"
@@ -105,7 +105,6 @@ function Home() {
                 <Icon className="h-5 w-5" />
               </span>
               <h3 className="mt-5 text-lg font-bold">{title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{desc}</p>
             </article>
           ))}
         </div>

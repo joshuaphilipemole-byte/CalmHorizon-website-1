@@ -44,13 +44,12 @@ function ServicesPage() {
 
       <section className="mx-auto max-w-6xl px-6 pb-20">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map(({ icon: Icon, title, desc }) => (
+          {services.map(({ icon: Icon, title }) => (
             <article key={title} className="rounded-2xl border border-border bg-card p-6 shadow-card">
               <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-secondary text-accent">
                 <Icon className="h-5 w-5" />
               </span>
               <h3 className="mt-5 text-base font-bold">{title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{desc}</p>
             </article>
           ))}
         </div>

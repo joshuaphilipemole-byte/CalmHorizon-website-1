@@ -19,12 +19,12 @@ export const Route = createFileRoute("/")({
 });
 
 const services = [
-  { icon: Brain, title: "Anxiety & Stress" },
-  { icon: HeartPulse, title: "Depression" },
-  { icon: Sparkles, title: "ADD/ADHD" },
-  { icon: Moon, title: "Sleeping Disorder" },
-  { icon: Users, title: "Life Transitions" },
-  { icon: ShieldCheck, title: "Medication Management" },
+  { icon: Brain, title: "Anxiety & Stress", desc: "Targeted care for generalized anxiety, panic, and burnout." },
+  { icon: HeartPulse, title: "Depression", desc: "Evidence-based treatment plans tailored to your goals." },
+  { icon: Sparkles, title: "ADD/ADHD", desc: "Comprehensive evaluation and ongoing medication management." },
+  { icon: Moon, title: "Sleeping Disorder", desc: "Restore healthy sleep patterns as a foundation for mental wellbeing." },
+  { icon: Users, title: "Life Transitions", desc: "Support through grief, relationships, and identity change." },
+  { icon: ShieldCheck, title: "Medication Management", desc: "Careful, collaborative prescribing with regular follow-ups." },
 ];
 
 function Home() {
@@ -96,7 +96,7 @@ function Home() {
           </Link>
         </div>
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map(({ icon: Icon, title }) => (
+          {services.map(({ icon: Icon, title, desc }) => (
             <article
               key={title}
               className="group rounded-2xl border border-border bg-card p-7 shadow-card transition-all hover:-translate-y-1 hover:shadow-soft"
@@ -105,6 +105,7 @@ function Home() {
                 <Icon className="h-5 w-5" />
               </span>
               <h3 className="mt-5 text-lg font-bold">{title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{desc}</p>
             </article>
           ))}
         </div>

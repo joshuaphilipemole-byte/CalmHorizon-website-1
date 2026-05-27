@@ -12,6 +12,7 @@ import appCss from "../styles.css?url";
 import socialImage from "@/assets/about-office.jpg";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { HeadwayScheduleWidget } from "@/components/HeadwayScheduleWidget";
 
 const BASE_URL = "https://calmhorizon.health";
 const JSON_LD_SCHEMA = {
@@ -154,6 +155,7 @@ function RootComponent() {
           <Outlet />
         </main>
         <SiteFooter />
+        <HeadwayScheduleWidget />
       </div>
     </QueryClientProvider>
   );

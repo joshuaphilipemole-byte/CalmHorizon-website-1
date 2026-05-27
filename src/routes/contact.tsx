@@ -5,6 +5,7 @@ import { format } from "date-fns";
 import { z } from "zod";
 import { Calendar } from "@/components/ui/calendar";
 import { cn } from "@/lib/utils";
+import { useFormSubmission } from "@/hooks/use-form-submission";
 
 const BASE_URL = "https://calmhorizon.health";
 
@@ -43,11 +44,12 @@ function ContactPage() {
   const [time, setTime] = useState<string>("");
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const { submitForm, isLoading, error: submitError } = useFormSubmission();
 
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const result = bookingSchema.safeParse({
@@ -67,7 +69,26 @@ function ContactPage() {
       return;
     }
     setErrors({});
-    setSubmitted(true);
+
+    // Submit to API
+    const response = await submitForm({
+      name: result.data.name,
+      email: result.data.email,
+      phone: result.data.phone,
+      notes: result.data.notes,
+      date: format(result.data.date, "yyyy-MM-dd"),
+      time: result.data.time,
+    });
+
+    if (response.success) {
+      setSubmitted(true);
+    } else if (response.issues) {
+      const fieldErrors: Record<string, string> = {};
+      for (const issue of response.issues) {
+        fieldErrors[issue.path[0] as string] = issue.message;
+      }
+      setErrors(fieldErrors);
+    }
   }
 
   return (
@@ -192,11 +213,18 @@ function ContactPage() {
               </div>
             )}
 
+            {submitError && (
+              <div className="rounded-xl bg-destructive/10 border border-destructive px-4 py-3 text-sm text-destructive">
+                {submitError}
+              </div>
+            )}
+
             <button
               type="submit"
-              className="w-full rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-card transition-transform hover:-translate-y-0.5"
+              disabled={isLoading}
+              className="w-full rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-card transition-transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Book an Appointment
+              {isLoading ? "Submitting..." : "Book an Appointment"}
             </button>
             <p className="text-xs text-muted-foreground">
               By submitting, you agree to be contacted about your inquiry. I

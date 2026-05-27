@@ -4,11 +4,9 @@ import { Mail, Phone, MapPin, Clock, CalendarIcon, CheckCircle2 } from "lucide-r
 import { format } from "date-fns";
 import { z } from "zod";
 import { Calendar } from "@/components/ui/calendar";
-import HeadwayCalendar from "@/components/HeadwayCalendar";
 import { cn } from "@/lib/utils";
 
 const BASE_URL = "https://calmhorizon.health";
-const ICS_URL = "https://api.headway.co/calendar/c5de71b8-a508-4a74-b63c-43f1ff2c0d22.ics";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -83,26 +81,6 @@ function ContactPage() {
           Choose a date and time that works for you. I'll confirm your
           telehealth appointment within one business day.
         </p>
-      </div>
-
-      <div className="mt-8 max-w-3xl">
-        <h2 className="text-lg font-semibold">Availability calendar</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          View and interact with live availability. Click events to open booking links.
-        </p>
-
-        <div className="mt-4">
-          <HeadwayCalendar icsUrl={ICS_URL} />
-        </div>
-
-        <div className="mt-3 flex flex-wrap gap-3">
-          <a href={ICS_URL} target="_blank" rel="noreferrer" className="text-sm text-accent underline">
-            Open raw .ics (download / add to calendar)
-          </a>
-          <a href="/services" className="text-sm underline">
-            Pricing & insurance
-          </a>
-        </div>
       </div>
 
       <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">

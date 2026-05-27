@@ -78,7 +78,7 @@ export function HeadwayCalendarLoader() {
   }, []);
 
   const close = () => setOpen(false);
-  const open = () => {
+  const openCalendarOverlay = () => {
     const opened = tryOpenHeadwayWidget();
     if (!opened) {
       setOpen(true);
@@ -90,7 +90,7 @@ export function HeadwayCalendarLoader() {
       <div className="fixed bottom-6 right-6 z-50 hidden rounded-full border border-border bg-background/95 px-4 py-2 shadow-soft backdrop-blur-sm md:block">
         <button
           type="button"
-          onClick={open}
+          onClick={openCalendarOverlay}
           className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground shadow-card transition-transform hover:-translate-y-0.5"
         >
           <CalendarDays className="h-4 w-4" />

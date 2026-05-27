@@ -26,8 +26,8 @@ export function SiteFooter() {
           <h3 className="text-sm font-bold text-primary">Contact</h3>
           <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
             <li>hello@calmhorizon.health</li>
-            <li>(415) 555-0142</li>
-            <li>Virtual telehealth across CA, NY, TX</li>
+            <li>Phone: "(516)-475-9570"</li>
+            <li>Virtual telehealth - NY</li>
           </ul>
         </div>
       </div>

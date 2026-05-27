@@ -76,14 +76,14 @@ function AboutPage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-6 pt-20 pb-12">
-        <p className="text-sm font-semibold uppercase tracking-widest text-accent">About Calm Horizon</p>
+        <p className="text-sm font-semibold uppercase tracking-widest text-accent">My approach to therapy</p>
         <h1 className="mt-3 max-w-3xl text-5xl font-extrabold leading-[1.05] md:text-6xl">
-          A modern psychiatry practice built around trust.
+          Compassionate, client-centered mental health care with evidence-based support.
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
           I take a compassionate, client-centered approach to care, focusing on creating
           a safe and open space for you to express yourself. By listening carefully to
-          your concerns, we can work together to develop a treatment plan that's right
+          your concerns, we can work together to develop a treatment plan that’s right
           for you. I utilize a combination of therapy and evidence-based practices to
           help you build coping strategies and regain control of your mental health.
         </p>
@@ -91,11 +91,9 @@ function AboutPage() {
 
       <section className="mx-auto grid max-w-6xl gap-12 px-6 py-24 md:grid-cols-2">
         <div>
-          <h2 className="text-3xl font-bold">My mission</h2>
+          <h2 className="text-3xl font-bold">What you can expect from me</h2>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-            To make excellent psychiatric care accessible, unhurried, and
-            grounded in the science of what works — so every patient has a
-            clearer horizon ahead.
+            In our sessions, you can expect to gain a deeper understanding of yourself and your mental health. My goal is to create a supportive and non-judgmental environment where you feel comfortable exploring your thoughts and emotions. Together, we’ll set realistic goals. By the end of our time together, I aim for you to feel empowered with tools and strategies that can help you navigate challenges and lead a more balanced, fulfilling life.
           </p>
         </div>
         <div>

@@ -23,7 +23,7 @@ const JSON_LD_SCHEMA = {
     "Calm Horizon offers evidence-based telehealth psychiatry for adults with anxiety, depression, ADHD, mood disorders, and medication management across California, New York, and Texas.",
   image: socialImage,
   email: "hello@calmhorizon.health",
-  telephone: "+1-415-555-0142",
+  telephone: "+1-516-475-9570",
   areaServed: [
     { "@type": "State", name: "California" },
     { "@type": "State", name: "New York" },
@@ -31,7 +31,7 @@ const JSON_LD_SCHEMA = {
   ],
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+1-415-555-0142",
+    telephone: "+1-516-475-9570",
     contactType: "patient support",
     email: "hello@calmhorizon.health",
     areaServed: ["California", "New York", "Texas"],

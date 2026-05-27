@@ -86,9 +86,9 @@ function ContactPage() {
       <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {[
           { Icon: Mail, label: "Email", value: "hello@calmhorizon.health" },
-          { Icon: Phone, label: "Phone", value: "(415) 555-0142" },
+          { Icon: Phone, label: "Phone", value: "Phone: \"(516)-475-9570\"" },
           { Icon: MapPin, label: "Service area", value: "Virtual telehealth — CA, NY, TX" },
-          { Icon: Clock, label: "Hours", value: "Mon–Fri · 8am–7pm PT" },
+          { Icon: Clock, label: "Hours", value: "Mon–Fri · 10am to 7pm" },
         ].map(({ Icon, label, value }) => (
           <li key={label} className="flex items-start gap-4 rounded-2xl border border-border bg-card p-5 shadow-card">
             <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-secondary text-accent">

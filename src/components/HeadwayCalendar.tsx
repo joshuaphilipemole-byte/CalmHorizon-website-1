@@ -40,6 +40,19 @@ function tryOpenHeadwayWidget() {
   return false;
 }
 
+function openBookingCalendar() {
+  if (typeof window === "undefined") {
+    return;
+  }
+
+  const opened = tryOpenHeadwayWidget();
+  if (opened) {
+    return;
+  }
+
+  window.open(CALENDAR_URL, "_blank", "noopener,noreferrer");
+}
+
 function loadHeadwayScript() {
   if (typeof document === "undefined") {
     return;
@@ -145,8 +158,17 @@ export function HeadwayCalendarButton({
       return;
     }
 
-    const event = new Event("openHeadwayCalendar");
-    window.dispatchEvent(event);
+    const opened = tryOpenHeadwayWidget();
+    if (opened) {
+      return;
+    }
+
+    if (typeof window.openHeadwayCalendar === "function") {
+      window.openHeadwayCalendar();
+      return;
+    }
+
+    window.open(CALENDAR_URL, "_blank", "noopener,noreferrer");
   };
 
   return (

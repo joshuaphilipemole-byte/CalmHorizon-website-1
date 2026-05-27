@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Brain, HeartPulse, Moon, ShieldCheck, Sparkles, Users } from "lucide-react";
 import heroImg from "@/assets/about-office.jpg";
+import { HeadwayCalendarButton } from "@/components/HeadwayCalendar";
 
 const BASE_URL = "https://calmhorizon.health";
 
@@ -55,9 +56,13 @@ function Home() {
               care tailored to each individual’s unique needs.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
+              <HeadwayCalendarButton
+                className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-soft transition-transform hover:-translate-y-0.5"
+                label="Open booking calendar"
+              />
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-soft transition-transform hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-card/70 px-7 py-3.5 text-sm font-semibold text-primary backdrop-blur transition-colors hover:bg-card"
               >
                 Book an Appointment <ArrowRight className="h-4 w-4" />
               </Link>

@@ -14,6 +14,9 @@ import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ApiSubmissionsRouteImport } from './routes/api/submissions'
+import { Route as AdminSubmissionsRouteImport } from './routes/admin/submissions'
+import { Route as ApiSubmissionsIdRouteImport } from './routes/api/submissions/$id'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -40,6 +43,21 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiSubmissionsRoute = ApiSubmissionsRouteImport.update({
+  id: '/api/submissions',
+  path: '/api/submissions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminSubmissionsRoute = AdminSubmissionsRouteImport.update({
+  id: '/admin/submissions',
+  path: '/admin/submissions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiSubmissionsIdRoute = ApiSubmissionsIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => ApiSubmissionsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -47,6 +65,9 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/admin/submissions': typeof AdminSubmissionsRoute
+  '/api/submissions': typeof ApiSubmissionsRouteWithChildren
+  '/api/submissions/$id': typeof ApiSubmissionsIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -54,6 +75,9 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/admin/submissions': typeof AdminSubmissionsRoute
+  '/api/submissions': typeof ApiSubmissionsRouteWithChildren
+  '/api/submissions/$id': typeof ApiSubmissionsIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -62,13 +86,41 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/admin/submissions': typeof AdminSubmissionsRoute
+  '/api/submissions': typeof ApiSubmissionsRouteWithChildren
+  '/api/submissions/$id': typeof ApiSubmissionsIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/contact' | '/services' | '/sitemap.xml'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/services'
+    | '/sitemap.xml'
+    | '/admin/submissions'
+    | '/api/submissions'
+    | '/api/submissions/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact' | '/services' | '/sitemap.xml'
-  id: '__root__' | '/' | '/about' | '/contact' | '/services' | '/sitemap.xml'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/services'
+    | '/sitemap.xml'
+    | '/admin/submissions'
+    | '/api/submissions'
+    | '/api/submissions/$id'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/services'
+    | '/sitemap.xml'
+    | '/admin/submissions'
+    | '/api/submissions'
+    | '/api/submissions/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -77,6 +129,8 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  AdminSubmissionsRoute: typeof AdminSubmissionsRoute
+  ApiSubmissionsRoute: typeof ApiSubmissionsRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -116,8 +170,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/submissions': {
+      id: '/api/submissions'
+      path: '/api/submissions'
+      fullPath: '/api/submissions'
+      preLoaderRoute: typeof ApiSubmissionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/submissions': {
+      id: '/admin/submissions'
+      path: '/admin/submissions'
+      fullPath: '/admin/submissions'
+      preLoaderRoute: typeof AdminSubmissionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/submissions/$id': {
+      id: '/api/submissions/$id'
+      path: '/$id'
+      fullPath: '/api/submissions/$id'
+      preLoaderRoute: typeof ApiSubmissionsIdRouteImport
+      parentRoute: typeof ApiSubmissionsRoute
+    }
   }
 }
+
+interface ApiSubmissionsRouteChildren {
+  ApiSubmissionsIdRoute: typeof ApiSubmissionsIdRoute
+}
+
+const ApiSubmissionsRouteChildren: ApiSubmissionsRouteChildren = {
+  ApiSubmissionsIdRoute: ApiSubmissionsIdRoute,
+}
+
+const ApiSubmissionsRouteWithChildren = ApiSubmissionsRoute._addFileChildren(
+  ApiSubmissionsRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -125,6 +212,8 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  AdminSubmissionsRoute: AdminSubmissionsRoute,
+  ApiSubmissionsRoute: ApiSubmissionsRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
